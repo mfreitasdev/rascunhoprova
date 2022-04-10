@@ -16,46 +16,59 @@ const acao=()=>{
 
   return (
     <SafeAreaView style={estilos.conteiner}>
-      <Text>Calcular sua nota!</Text>
-      <TextInput 
-      style={estilos.display} 
-      value={nota1}
-      onChangeText={setNota1}
-      keyboardType='numeric'
+        <View style={estilos.header}>
 
-      ></TextInput>
+        </View>
 
-      <TextInput 
-      style={estilos.display} 
-      value={nota2}
-      onChangeText={setNota2}
-      keyboardType='numeric'
 
-      ></TextInput>
 
-      <TextInput 
-      style={estilos.display} 
-      value={nota3}
-      onChangeText={setNota3}
-      keyboardType='numeric'
 
-      ></TextInput>
 
-<TextInput 
-      style={estilos.display} 
-      value={resultado}
-      onChangeText={setResultado}
-      keyboardType='numeric'
 
-      ></TextInput>
 
-      <TouchableHighlight style={estilos.btn}
-      onPress={()=>acao()}
-      >
-        <Text>Calcular</Text>
-      </TouchableHighlight>
 
-    </SafeAreaView>
+      
+      <View>
+        <Text>Calcular sua nota!</Text>
+        <TextInput
+          style={estilos.display}
+          value={nota1}
+          onChangeText={setNota1}
+          keyboardType='numeric'
+
+        ></TextInput>
+
+        <TextInput
+          style={estilos.display}
+          value={nota2}
+          onChangeText={setNota2}
+          keyboardType='numeric'
+
+        ></TextInput>
+
+        <TextInput
+          style={estilos.display}
+          value={nota3}
+          onChangeText={setNota3}
+          keyboardType='numeric'
+
+        ></TextInput>
+
+        <TextInput
+          style={estilos.display}
+          value={resultado}
+          onChangeText={setResultado}
+          keyboardType='numeric'
+
+        ></TextInput>
+
+        <TouchableHighlight style={estilos.btn}
+          onPress={() => acao()}
+        >
+          <Text>Calcular</Text>
+        </TouchableHighlight>
+        </View>
+      </SafeAreaView>
   );
 }
 
@@ -74,5 +87,10 @@ const estilos = StyleSheet.create({
   },
   txtBtn:{
 
+  },
+  header:{
+    backgroundColor:'#101010',
+    width:1000,
+    height:40,
   }
 });
