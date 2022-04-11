@@ -1,13 +1,13 @@
 import React,{useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, TouchableOpacity ,TextInput } from 'react-native';
+import { borderLeftColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export default function App() {
 
 const [nota1, setNota1]=useState('');
 const [nota2, setNota2]=useState('');
 const [nota3, setNota3]=useState('');
-const [resultado, setResultado]=useState(0);
 
 /*const acao=()=>{
   return setResultado(((parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) /3 ).toFixed(2))
@@ -30,7 +30,7 @@ function acaodobotao(){
 
 
   return (
-    <SafeAreaView style={estilos.conteiner}>
+    <SafeAreaView style={estilos.container}>
 
 
 
@@ -41,9 +41,10 @@ function acaodobotao(){
 
       
       <View>
-        <Text>Calcular sua nota!</Text>
+        <Text style={estilos.titulo}>
+          Fui Aprovado ou reprovado? :`C</Text>
         <TextInput
-          style={estilos.display}
+          style={estilos.inputs}
           value={nota1}
           onChangeText={(nota1) => setNota1(nota1)}
           placeholder="Digite a primeira nota"
@@ -52,7 +53,7 @@ function acaodobotao(){
         ></TextInput>
 
         <TextInput
-          style={estilos.display}
+          style={estilos.inputs}
           value={nota2}
           onChangeText={(nota2) => setNota2(nota2)}
           placeholder="Digite a segunda nota"
@@ -61,7 +62,7 @@ function acaodobotao(){
         ></TextInput>
 
         <TextInput
-          style={estilos.display}
+          style={estilos.inputs}
           value={nota3}
           onChangeText={(nota3) => setNota3(nota3)}
           placeholder="Digite a terceira nota"
@@ -81,20 +82,30 @@ function acaodobotao(){
 }
 
 const estilos = StyleSheet.create({
-  conteiner:{
-    padding:10
+  container:{
+    flex:1,
+
   },
-  display:{
+  titulo:{
+    textAlign:'center',
+    marginTop:30,
+    fontSize:30,
+    paddingBottom:10,
+    fontWeight:'bold'
+  },
+  inputs:{
     borderWidth:1,
     borderRadius:10,
     padding:10,
+    margin:10,
   },
   button:{
-    backgroundColor:'#aaa',
+    backgroundColor:'#000',
     padding:15,
     justifyContent: 'center',
     alignItems:'center',
     margin: 15,
+    color:'grey',
     
   },
   buttonText:{
@@ -102,9 +113,5 @@ const estilos = StyleSheet.create({
     fontSize:25,
 
   },
-  header:{
-    backgroundColor:'#101010',
-    width:1000,
-    height:40,
-  }
+
 });
